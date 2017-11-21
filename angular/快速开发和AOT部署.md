@@ -105,3 +105,35 @@
     <script src="node_modules/zone.js/dist/zone.js"></script>
 	<app-root></app-root>
     <script src="bundle.js"></script>
+
+# V1.0.1 #
+
+在执行node_modules/.bin/ngc -p tsconfig-aot.json的时候，会提示5055错误，原因是无法写入文件，因为会引起覆盖，尚未找到解决办法，目前的方法是
+
+- 第一次执行生成apt文件夹，然后更改main.ts文件内容
+
+        import { enableProdMode } from '@angular/core';
+    	import { platformBrowser } from '@angular/platform-browser';
+    	import { AppModuleNgFactory } from '../aot/src/app/app.module.ngfactory';
+    	
+    	enableProdMode();
+    	console.log('Running AOT compiled');
+    	platformBrowser().bootstrapModuleFactory(AppModuleNgFactory);
+
+
+- 更改tsconfig-aot.json文件配置，使输出到aot1文件夹
+
+	    "angularCompilerOptions": {
+	        "outDir": "aot1",
+	        "skipMetadataEmit": true
+	    }
+
+- 更改aot1/src/main.js中的引用路径
+
+		import { AppModuleNgFactory } from './app/app.module.ngfactory';
+
+- 更改rollup-config.js入口路径
+		
+		input: 'aot1/src/main.js'
+
+然后执行node_modules/.bin/rollup -c rollup-config.js打包bundle.js文件
