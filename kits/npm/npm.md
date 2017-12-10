@@ -15,3 +15,12 @@ npm随着node安装自行进行安装，不用单独install
 ## npm install安装提示不能识别@ ##
 
 在需要安装的包名加上双引号，npm install '@***'
+仅在cmd下需要添加双引号
+
+## 安装node-sass使用镜像
+	
+	npm install node-sass --save-dev
+
+越墙方式:需要在.npmrc(C:\Users\Administrator\.npmrc)文件中再加入如下内容，让这些连接也都只连接淘宝镜像：
+
+	sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
