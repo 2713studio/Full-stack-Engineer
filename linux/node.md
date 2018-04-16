@@ -3,6 +3,8 @@
 使用angular5搭建three开发
 
 1.  下载nodejs安装文件
+
+
 2.  解压到自定义目录
 
 		tar node-v8.10.0-linux-x64.tar.xz
