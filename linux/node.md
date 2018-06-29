@@ -17,6 +17,7 @@
 		export NODE_PATH=$NODE_HOME/lib/node_modules
 4. 开放端口
 
+		/etc/sysconfig/iptables
 		-A IN_public_allow -p tcp -m tcp --dport 5555 -m conntrack --ctstate NEW -j ACCEPT
 
 		service iptables restart
@@ -31,3 +32,9 @@
 		：关闭当前后台运行的命令：
         （1）通过jobs命令查看jobnum，然后执行kill %jobnum
 		（2）通过ps命令查看进程号PID，然后执行  kill %PID，如果是前台进程的话，直接执行 Ctrl+c 就可以终止了
+
+## 问题
+
+### npm install提示git问题
+
+需要安装git

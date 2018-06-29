@@ -53,3 +53,9 @@
 		-A IN_public_allow -p tcp -m tcp --dport 80 -m conntrack --ctstate NEW -j ACCEPT
 		重启防火墙
 		service iptables restart
+
+6. 卸载
+
+		rm -rf /etc/nginx/
+		rm -rf /usr/sbin/nginx
+	删除目录

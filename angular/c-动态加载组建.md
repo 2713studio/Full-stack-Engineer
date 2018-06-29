@@ -58,3 +58,7 @@
 
 切记在组件声明文件中添加，否则会报错
 	entryComponents: [CoreDescComponent],
+
+###删除操作
+
+需要在子组件的onDestroy方法中删除js相关对象和变量；

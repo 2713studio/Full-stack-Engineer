@@ -7,3 +7,4 @@
 - ''		false
 - null		false
 - undefined	false
+- {} true
