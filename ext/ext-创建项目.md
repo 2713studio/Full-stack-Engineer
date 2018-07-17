@@ -9,3 +9,5 @@
 ### cmd默认安装目录
 
 	C:\Users\xiexiao\bin\Sencha\Cmd\6.5.2.15
+
+访问路径：http://localhost:1841/?platformTags=fashion

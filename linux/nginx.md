@@ -21,8 +21,8 @@
 
 		//进入nginx目录
 		cd /usr/local/nginx
-		//执行命令
-		./configure
+		//执行命令 指定安装目录
+		./configure --prefix=/usr/local/nginx 
 		//执行make命令
 		make
 		//执行make install命令

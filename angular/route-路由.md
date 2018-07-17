@@ -35,7 +35,7 @@
 
 3. 获取路由参数
 
-		import { ActivatedRoute, Params } from '@angular/router';
+		import { ActivatedRoute } from '@angular/router';
 		import 'rxjs/add/operator/switchMap';
 	
 		private route: ActivatedRoute(依赖注入)
@@ -52,6 +52,12 @@
 		1、import { Subscription } from 'rxjs/Subscription';//导入包
 		2、subscribr: Subscription; //声明
 		3、this.subscribr.unsubscribe();//取消方法，调用对象的是订阅时候的返回值！
+
+4. 添加路由参数之外的参数
+
+		this.router.navigate(['/main/expert', { type: '职称级别', value: '正高' }]);
+
+	获取参数方法和3中一样
 
 ### 通配符（用以路由匹配错误时）
 
