@@ -1,32 +1,20 @@
 ## store排序
 
-    dataList: {
-        pageSize: 20,
-        autoLoad: {
-            start: 1,
-            limit: 20
-        },
-        autoLoad: true,
-        proxy: {
-            type: 'ajax',
-            url: CFG.getServerUrl() + '/perusermanControl/personalRealNameAudit',
-            extraParams: {
-                id: sessionStorage.getItem('userid')
-            },
-            reader: {
-                type: 'json',
-                rootProperty: 'data'
+    
+    load: function (self, records, successful, operation, eOpts) {
+        self.sort('rId');
+        self.filterBy(function (record, index) {
+            if (record.get('rId') === 1 || record.get('rId') === 2) {
+                return false;
+            } else {
+                return true;
             }
-        },
-        sorters: [{
-            property: 'submit',
-            direction: 'desc'
-        }],
-        listeners: {
-            load: function (self, records, successful, operation, eOpts) {
-                console.log(records)
-            }
-        }
+        });
+        self.add({
+            rId: 0,
+            rName: '全部'
+        })
+        // self.load();  
     }
 
 	

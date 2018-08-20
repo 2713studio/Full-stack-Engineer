@@ -7,6 +7,9 @@
 	netstat -tunlp |grep 端口号
 	netstat -anp | grep 进程名
 	netstat -anp | grep PID
+	firewall-cmd --zone=public --add-port=80/tcp --permanent 开放端口(防火墙不能关闭)
+	firewall-cmd --list-ports 查看防火墙开放端口
+	firewall-cmd --reload 重启防火墙
 
 ### 结束端口程序
 

@@ -59,3 +59,26 @@
 		rm -rf /etc/nginx/
 		rm -rf /usr/sbin/nginx
 	删除目录
+
+## linux下搭建nginx代理websocket
+
+ws服务地址：ws://10.66.226.86:8080/qnnet/chatServer
+nginx代理地址：10.66.5.125:80
+nginx版本(>1.3)
+
+1. 更改ws地址
+
+		wsURL: string = 'ws://10.66.5.125:80/qnnet/chatServer';
+
+2. 配置代理
+
+    upstream websocket {
+        server 10.66.5.123:8080;
+    }
+		
+        location /qnnet/chatServer {
+           proxy_pass http://10.66.5.123:8080/qnnet/chatServer;
+           proxy_http_version 1.1;
+           proxy_set_header Upgrade $http_upgrade;
+           proxy_set_header Connection "upgrade";
+        }

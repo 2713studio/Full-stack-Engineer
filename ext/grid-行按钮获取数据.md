@@ -18,6 +18,29 @@
 		var rec = grid.getStore().getAt(rowIndex);
 	        console.log(event)
 	    }
+	
+	icon可编辑状态更改：
+
+        isActionDisabled: function (grid, rowIndex, colIndex, item, record) {
+            if (record.get('recommended_state') == 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+	
+	icon图片更改
+
+		getClass : function (v, metadata, r, rowIndex, colIndex, store) {
+            if(recValid == 'N'){
+                return 'x-hidden';
+            }
+            var data = r.raw.matchFlag;
+            if(data== "PMIS"){
+                return 'x-hidden';
+            }
+            return "doc_lines";
+        }
 
 2. widgetcolumn添加编辑按钮获取行数据
 
