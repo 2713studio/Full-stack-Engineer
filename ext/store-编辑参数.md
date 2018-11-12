@@ -15,3 +15,7 @@ store初始化请求参数详情
 start：每次刷新的起始值，刷新后会自动变化，所以如果需要更新store，需要初始化一下start值，和page雷同
 
 pageSize：表示limit值，一般需要在store配置里面声明，之后limit就可以省略了
+
+### 编辑url
+
+ajax请求的url使用apply失效，需要直接赋值：gridStore.proxy.url = newUrl;

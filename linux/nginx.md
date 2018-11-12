@@ -82,3 +82,9 @@ nginx版本(>1.3)
            proxy_set_header Upgrade $http_upgrade;
            proxy_set_header Connection "upgrade";
         }
+
+## 配置子域名
+
+添加一个80端口的监听即可
+
+	server_name  wxbms.shqncs.com;

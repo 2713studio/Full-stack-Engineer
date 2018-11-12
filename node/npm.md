@@ -6,9 +6,9 @@ npm随着node安装自行进行安装，不用单独install
 
 *三种使用方法*
 
-1. npm --registry https://registry.npm.taobao.org install express
+1. npm --registry https://registry.npm.taobao.org
 2. npm config set registry https://registry.npm.taobao.org
-3. npm install -g cnpm --registry=https://registry.npm.taobao.org
+3. **npm install -g cnpm --registry=https://registry.npm.taobao.org**
 
 可通过npm config get registry来验证是否安装成功
 
