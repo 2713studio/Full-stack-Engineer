@@ -58,7 +58,7 @@
 
 		rm -rf /etc/nginx/
 		rm -rf /usr/sbin/nginx
-	删除目录
+	删除目录(yum remove nginx)
 
 ## linux下搭建nginx代理websocket
 
