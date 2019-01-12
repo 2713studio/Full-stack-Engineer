@@ -24,3 +24,17 @@ new-cmp:表示子模块中的一个页面，会在new-cmp文件夹下穿件mvc�
 		ng g c ChangePassword
 
 会在根目录change-password下创建带路由的子模块
+
+### 创建一个懒加载模块
+
+1. 创建一个带路由的模块
+
+		ng generate module main/nian-hui1 --routing
+
+2. 创建一个组件，路径和模块一样
+
+		ng g c main/nian-hui1
+
+3. 设置主路由
+
+		loadChildren: './main/nian-hui1/nian-hui1.module#NianHui1Module'
