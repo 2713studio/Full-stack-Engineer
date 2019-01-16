@@ -1,14 +1,16 @@
 const gulp = require('gulp'),
-    jshint = require('gulp-jshint');
+    minifyCss = require("gulp-minify-css"),
+    uglify = require("gulp-uglify");
 
 gulp.task('default', function (next) {
     // 将你的默认的任务代码放在这
-    gulp.watch('src/app.js', function (event) {
-        if (event.type === 'changed') {
-            gulp.src('src/app.js')
-                .pipe(jshint())
-                .pipe(jshint.reporter()); // 输出检查结果
-        }
-    });
-    // next();
+    gulp.src('dist/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('build'));
+    gulp.src('dist/**/*.css')
+        .pipe(minifyCss())
+        .pipe(gulp.dest('build'));
+    gulp.src('dist/**/!(*.js|*.css)')
+        .pipe(gulp.dest('build'));
+    next();
 });
