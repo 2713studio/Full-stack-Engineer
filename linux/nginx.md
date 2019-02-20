@@ -23,6 +23,10 @@
 		cd /usr/local/nginx
 		//执行命令 指定安装目录
 		./configure --prefix=/usr/local/nginx 
+
+		//报错nginx c compiler cc is not found
+		命令：yum -y install gcc-c++
+
 		//执行make命令
 		make
 		//执行make install命令

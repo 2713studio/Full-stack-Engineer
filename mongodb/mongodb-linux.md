@@ -6,6 +6,8 @@
 
     yum install libcurl4 openssl
 
+	tar zxvf mongodb-linux-x86_64-3.6.3.tgz
+
 ### 设置log路径
 
 	// 创建实例目录
@@ -35,8 +37,9 @@
 
 ### 远程连接
 
-	启动时添加参数bind_ip_all
-	启动时添加参数bind_ip=0.0.0.0
+	启动时添加参数--bind_ip_all
+	启动时添加参数--bind_ip=0.0.0.0
+	无法连接：尝试增加云服务安全组
 
 ### 添加权限验证
 
@@ -52,6 +55,8 @@
 1. child process failed, exited with error number 48
 
 	删除dbpath下的所有实例文件，然后重新启动
+
+	netstat -tunlp |grep 27017查询到pid后kill掉，然后重启
 
 
 
