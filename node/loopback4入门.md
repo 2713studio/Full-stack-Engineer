@@ -19,3 +19,9 @@
 	
 4. lb4 repository
 5. lb4 controller
+
+## 问题
+
+### node启动后，无法使用IP访问
+
+根目录下index.js中 更改localhost为'0.0.0.0',重新启动即可。
