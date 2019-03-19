@@ -24,6 +24,8 @@
 5. 后台运行
 
 		nohup node app.js //不挂断的运行node服务
+		nohup npm start > ../myout.file 2>&1 & // 重定向,报错的时候
+		// 退出的时候用命令exit退出
 		ctrl+z //将node服务放到后台，并且处于暂停状态
 		bg 1 //激活任务序号为1的服务状态
 		fg 1 //将后台中的命令调至前台继续运行
