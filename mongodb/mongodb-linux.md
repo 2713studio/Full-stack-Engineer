@@ -35,6 +35,12 @@
 	db.shutdownServer();
 注：没开启auth模式下，必须在localhost下才能关闭，而且必须在admin下
 
+	netstat -anp | grep 进程名 
+	netstat -an突破
+ 
+	或者netstat -anp查看所有的27017的pid
+	kill -2 pid
+
 ### 远程连接
 
 	启动时添加参数--bind_ip_all

@@ -7,7 +7,7 @@
 
 2.  解压到自定义目录
 
-		tar node-v8.10.0-linux-x64.tar.xz
+		tar -xvf node-v8.10.0-linux-x64.tar.xz
 3. 配置环境变量
 
 		/etc/profile
