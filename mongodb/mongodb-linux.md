@@ -15,6 +15,8 @@
 	// 创建实例日志目录
 	mkdir -p /data/mongoDB/logs
 
+注：window下注意必须手动创建目录，路径使用全局且使用双引号
+
 ### 运行
 
 	mongod --dbpath /data/mongoDB/db --logpath /data/mongoDB/logs/mongod.log --fork

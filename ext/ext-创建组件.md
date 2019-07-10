@@ -21,6 +21,8 @@
 
 	Note. This command is not compatible with a Sencha Architect project.
 
+默认创建不加模式的话，会在app目录下创建新的view，如果需要在classic或者 modern下创建，则需要添加--classic标识
+
 3. 创建一个控制器
 
 		cd /path/to/MyApp
