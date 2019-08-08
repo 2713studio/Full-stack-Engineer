@@ -75,3 +75,10 @@
     console.log(obj.__proto__ === Object.prototype);
     console.log('Object函数的原型链指向null');
     console.log(Object.prototype.__proto__ == null);	
+
+## 构造函数new的过程
+
+1. 创建一个空对象
+2. 空对象的__proto__指向构造函数的原型对象
+3. 改变空对象的this指向
+4. 返回构造函数的返回值，如果构造函数返回的为值类型，则忽略，自动返回构造函数本身，如果为引用类型，返回设定的值
