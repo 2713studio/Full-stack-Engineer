@@ -21,6 +21,7 @@
 
 	```
 	docker exec -it mongo bash
+	mongo
 	```
 3. 添加用户信息
 
