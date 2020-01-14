@@ -30,7 +30,21 @@
 	>use admin;
 	>db.createUser({user: 'root', pwd: '123456', roles: ['root']})
 	```
+
+直接进入admin，教程来自菜鸟：
+
+```
+$ docker exec -it mongo mongo admin
+# 创建一个名为 admin，密码为 123456 的用户。
+>  db.createUser({ user:'admin',pwd:'123456',roles:[ { role:'userAdminAnyDatabase', db: 'admin'}]});
+# 尝试使用上面创建的用户信息进行连接。
+> db.auth('admin', '123456')
+
+# 然后直接在admin下添加数据库的管理员即可
+```
+
 ### 新增数据库
+
 通过mongo服务器上的命令行操作，创建新的数据并添加用户，此处必须在admin数据库下通过db.auth()方法认证才可以，否则会提示没有权限；
 ```
 use xiexiao
@@ -48,3 +62,4 @@ db.createUser({
 })
 ```
 
+添加成功后：db.getUsers()查看当前库下所有的用户
