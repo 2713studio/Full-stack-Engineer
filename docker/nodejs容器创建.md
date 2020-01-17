@@ -1,9 +1,7 @@
 #### 创建docker文件
 
-\
-
 ```
-# Check out https://hub.docker.com/_/node to select a new base image
+\# Check out https://hub.docker.com/_/node to select a new base image
 
 FROM node
 
@@ -37,8 +35,6 @@ RUN npm run build
 
 ENV HOST=0.0.0.0 PORT=3000
 
-
-
 EXPOSE ${PORT}
 
 CMD [ "npm", "start" ]
@@ -58,3 +54,16 @@ docker build -t mgame:latest .
 docker run -itd --name mgame -p 3000:3000 mgame
 ```
 
+注：项目需要上传时，比如操作文件权限，需要挂载到系统文件夹下
+
+```
+-v /home/upload:/home/upload
+```
+
+此时会提示没有操作权限，**创建容器的时候需要添加用户**
+
+```
+-u root
+```
+
+至此，可完美结束！
