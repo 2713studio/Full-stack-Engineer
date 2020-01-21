@@ -8,6 +8,15 @@
 2.  解压到自定义目录
 
 		tar -xvf node-v8.10.0-linux-x64.tar.xz
+	
+	注：12版本以后bin目录下没有npm，需要挂载之后，配置环境变量才能使用npm，排序部分先后
+	
+	```
+	ln -s /usr/local/node/node-v12.14.1-linux-x64/lib/node_modules/npm/bin/npm-cli.js /usr/local/node/node-v12.14.1-linux-x64/bin/npm
+	```
+	
+	
+	
 3. 配置环境变量
 
 		/etc/profile
@@ -19,7 +28,7 @@
 
 		/etc/sysconfig/iptables
 		-A IN_public_allow -p tcp -m tcp --dport 5555 -m conntrack --ctstate NEW -j ACCEPT
-
+	
 		service iptables restart
 5. 后台运行
 
@@ -32,7 +41,7 @@
 6. kill命令
 
 		：关闭当前后台运行的命令：
-        （1）通过jobs命令查看jobnum，然后执行kill %jobnum
+	    （1）通过jobs命令查看jobnum，然后执行kill %jobnum
 		（2）通过ps命令查看进程号PID，然后执行  kill %PID，如果是前台进程的话，直接执行 Ctrl+c 就可以终止了
 
 ## 问题

@@ -16,13 +16,23 @@ docker run --name nginx -p 80:80 -d nginx
 docker exec -it nginx bash
 ```
 ### 容器资源路径
-日志文件位置：/var/log/nginx
-配置文件位置： /etc/nginx
-资源存放的位置： /usr/share/nginx/html
+日志文件位置：/var/log/nginx/
+配置文件位置： /etc/nginx/conf.d/
+资源存放的位置： /usr/share/nginx/html/
 
 知道了资源路径，就可以自定义挂载配置了
 
 ### 挂载启动服务
+
+
+
+```
+docker run --name nginx -p 80:80 -v /home/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf -v /home/nginx/html:/usr/share/nginx/html -v /home/upload:/usr/share/nginx/upload -d nginx
+```
+
+```
+docker run --name nginx -p 80:80 -v /home/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/html:/usr/share/nginx/html -v /home/upload:/usr/share/nginx/upload -d nginx
+```
 
 ```
 docker run \
@@ -54,3 +64,15 @@ docker run \
 ```
 docker run -d -p 80:80 --name nginx -v ~/nginx/www:/usr/share/nginx/html -v ~/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf -v ~/nginx/logs:/var/log/nginx nginx
 ```
+
+#### 挂载配置文件配置文件服务，死活找不到文件，原来路径有说法
+
+```
+location /images1/images2/ {
+        root   /usr/local/;
+        autoindex on;
+    }
+    
+他会去你的服务器的/usr/local/images1/images2/ 下找文件  而不是 /usr/local/下去找文件
+```
+
