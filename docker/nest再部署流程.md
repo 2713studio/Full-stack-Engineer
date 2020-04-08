@@ -16,3 +16,8 @@ docker build -t mgame .
 docker run --name mgame -v /home/upload:/home/upload -p 3000:3000 -u root -d mgame
 ```
 
+#### 权限不足
+```
+在docker配置文件中，更改USER的值为root
+```
+
