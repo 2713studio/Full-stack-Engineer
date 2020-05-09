@@ -12,6 +12,7 @@ server {
         location / {
             root   html/empty-ng;
             index  index.html index.htm;
+        	try_files $uri $uri/ /index.html;
 
             gzip on;
             gzip_http_version 1.1;

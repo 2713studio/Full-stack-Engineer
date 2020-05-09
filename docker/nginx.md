@@ -1,4 +1,4 @@
-### 命令行安装
+命令行安装
 
 ```
 docker search nginx
@@ -24,15 +24,26 @@ docker exec -it nginx bash
 
 ### 挂载启动服务
 
-
+正式环境
 
 ```
-docker run --name nginx -p 80:80 -v /home/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf -v /home/nginx/html:/usr/share/nginx/html -v /home/upload:/usr/share/nginx/upload -d nginx
+docker run --name nginx-prod -p 80:80 -v /home/nginx/conf/prod.conf:/etc/nginx/conf.d/default.conf -v /home/nginx/html:/usr/share/nginx/html -v /upload/prod:/usr/share/nginx/upload -d nginx
 ```
+
+测试环境
+
+```
+docker run --name nginx-dev -p 8001:8001 -v /home/nginx/conf/dev.conf:/etc/nginx/conf.d/default.conf -v /home/nginx/html:/usr/share/nginx/html -v /upload/dev:/usr/share/nginx/upload -d nginx
+```
+
+
 
 ```
 docker run --name nginx -p 80:80 -v /home/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/html:/usr/share/nginx/html -v /home/upload:/usr/share/nginx/upload -d nginx
 ```
+
+
+
 
 ```
 docker run \
