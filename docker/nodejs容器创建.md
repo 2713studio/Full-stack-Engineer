@@ -67,3 +67,7 @@ docker run -itd --name mgame -p 3000:3000 mgame
 ```
 
 至此，可完美结束！
+
+#### 运行出现报错not valid exports from xxxx
+
+解决办法，指定node版本
